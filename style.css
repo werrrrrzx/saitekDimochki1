@@ -1,4 +1,4 @@
-/* style.css - Современный мятно-зелёный дизайн */
+/* style.css - Современный мятно-зелёный дизайн + Отличная мобильная адаптация */
 * {
     margin: 0;
     padding: 0;
@@ -15,50 +15,56 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
 }
 
 /* Header */
 header {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid #e5e7eb;
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 1.2rem 0;
+    padding: 1rem 0;
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
-    font-size: 1.85rem;
+    font-size: 1.7rem;
     font-weight: 700;
     letter-spacing: -1px;
     color: #14B8A6;
 }
 
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
 nav a {
     color: #374151;
     text-decoration: none;
-    margin-left: 2.2rem;
     font-weight: 500;
     transition: color 0.3s;
+    white-space: nowrap;
 }
 
 nav a:hover {
     color: #14B8A6;
 }
 
-/* Главная страница */
+/* Главная */
 .hero {
     background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
     text-align: center;
-    padding: 180px 20px 140px;
+    padding: 140px 20px 100px;
     position: relative;
     overflow: hidden;
 }
@@ -66,13 +72,12 @@ nav a:hover {
 .hero::before {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(77, 229, 202, 0.15) 0%, transparent 70%);
+    top: -40%;
+    right: -30%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(77, 229, 202, 0.18) 0%, transparent 70%);
     border-radius: 50%;
-    z-index: 0;
 }
 
 .hero .container {
@@ -81,50 +86,47 @@ nav a:hover {
 }
 
 .hero h1 {
-    font-size: 3.4rem;
-    line-height: 1.1;
-    margin-bottom: 1.2rem;
-    color: #1F2937;
+    font-size: 2.8rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
 }
 
 .subtitle {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     max-width: 680px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2.5rem;
     color: #4B5563;
 }
 
 .buttons {
     display: flex;
-    gap: 20px;
+    gap: 18px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .btn {
-    padding: 16px 40px;
+    padding: 16px 32px;
     font-size: 1.1rem;
     font-weight: 600;
-    border-radius: 9999px; /* сильно закруглённые кнопки */
+    border-radius: 9999px;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 280px;
+    min-width: 260px;
     box-shadow: 0 10px 15px -3px rgba(77, 229, 202, 0.3);
 }
 
 .primary {
     background: #14B8A6;
     color: white;
-    border: none;
 }
 
 .primary:hover {
     background: #0F766E;
     transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgba(77, 229, 202, 0.4);
 }
 
 .secondary {
@@ -136,109 +138,92 @@ nav a:hover {
 .secondary:hover {
     background: #14B8A6;
     color: white;
-    transform: translateY(-4px);
 }
 
 /* Преимущества */
 .advantages {
-    padding: 100px 0;
-    background: #ffffff;
+    padding: 80px 0;
 }
 
 .advantages h2 {
     text-align: center;
-    margin-bottom: 3.5rem;
-    font-size: 2.4rem;
-    color: #1F2937;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
 }
 
 .card {
     background: #f8fffc;
-    padding: 2.8rem 2rem;
+    padding: 2.2rem 1.8rem;
     border-radius: 24px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(77, 229, 202, 0.1);
     border: 1px solid #e6f4f1;
-    transition: all 0.4s ease;
+    transition: all 0.4s;
 }
 
 .card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(77, 229, 202, 0.18);
+    transform: translateY(-10px);
 }
 
-/* Форма */
+/* Форма, Спасибо, Контакты */
 .form-page, .contacts-page, .thanks-page {
-    padding: 100px 0;
-    background: #ffffff;
+    padding: 80px 20px;
 }
 
 .form-page h1, .contacts-page h1, .thanks-page h1 {
+    font-size: 2.4rem;
     text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 2.6rem;
+    margin-bottom: 1.8rem;
 }
 
 .form-group {
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
 }
 
 label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: 600;
-    color: #374151;
 }
 
 input, textarea {
     width: 100%;
-    padding: 16px 20px;
+    padding: 15px 18px;
     border: 2px solid #e5e7eb;
     border-radius: 16px;
-    font-size: 1.1rem;
-    transition: all 0.3s;
+    font-size: 1.05rem;
     background: #f9fafb;
 }
 
 input:focus, textarea:focus {
     border-color: #14B8A6;
-    background: white;
-    outline: none;
     box-shadow: 0 0 0 4px rgba(77, 229, 202, 0.15);
 }
 
 /* Страница Спасибо */
 .thanks-card {
-    max-width: 720px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 70px 50px;
+    padding: 60px 30px;
     background: #f0fdfa;
     border-radius: 32px;
     text-align: center;
     box-shadow: 0 20px 40px rgba(77, 229, 202, 0.15);
 }
 
-.thanks-card h1 {
-    color: #14B8A6;
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-}
-
 /* Контакты */
 .contact-info {
     background: #f0fdfa;
-    padding: 50px;
+    padding: 40px 30px;
     border-radius: 24px;
-    margin: 40px 0;
-    font-size: 1.2rem;
-    line-height: 2.1;
-    border: 1px solid #e6f4f1;
+    margin: 30px 0;
+    font-size: 1.15rem;
 }
 
 /* Footer */
@@ -246,20 +231,84 @@ footer {
     background: #0F766E;
     color: #e0f2f1;
     text-align: center;
-    padding: 2.5rem 0;
-    margin-top: 80px;
+    padding: 2rem 20px;
+    margin-top: 60px;
 }
 
-/* Адаптивность */
+/* ==================== МОБИЛЬНАЯ АДАПТАЦИЯ ==================== */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.6rem;
+    .container {
+        padding: 0 16px;
     }
+
+    header .container {
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 1.55rem;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        padding: 100px 16px 80px;
+    }
+
+    .hero h1 {
+        font-size: 2.35rem;
+    }
+
+    .subtitle {
+        font-size: 1.15rem;
+    }
+
     .buttons {
         flex-direction: column;
         align-items: center;
+        gap: 16px;
     }
+
     .btn {
         min-width: 100%;
+        padding: 17px 24px;
+        font-size: 1.05rem;
+    }
+
+    .advantages {
+        padding: 60px 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .form-page, .contacts-page, .thanks-page {
+        padding: 60px 16px;
+    }
+
+    .thanks-card {
+        padding: 50px 24px;
+    }
+
+    .contact-info {
+        padding: 35px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+    
+    .logo {
+        font-size: 1.45rem;
     }
 }
