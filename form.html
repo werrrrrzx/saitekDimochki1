@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подать заявку — Право и Защита</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">ПРАВО И ЗАЩИТА</div>
+            <nav>
+                <a href="index.html">Главная</a>
+                <a href="form.html">Подать заявку</a>
+                <a href="contacts.html">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="form-page">
+        <div class="container">
+            <h1>Заявка на юридическую помощь</h1>
+            <p class="subtitle">Заполните форму ниже, и наш специалист свяжется с вами в ближайшее время</p>
+
+            <form id="applicationForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="fullName">ФИО <span class="required">*</span></label>
+                    <input type="text" id="fullName" placeholder="Иванов Иван Иванович" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Номер телефона <span class="required">*</span></label>
+                    <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Причина обращения <span class="required">*</span></label>
+                    <textarea id="reason" rows="5" placeholder="Опишите вашу ситуацию..." required></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn primary" disabled>Отправить заявку</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Адвокатская фирма «Право и Защита». Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('applicationForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const inputs = document.querySelectorAll('#fullName, #phone, #reason');
+
+        function checkForm() {
+            let filled = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) filled = false;
+            });
+            submitBtn.disabled = !filled;
+        }
+
+        inputs.forEach(input => {
+            input.addEventListener('input', checkForm);
+        });
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            window.location.href = 'thanks.html';
+        }
+    </script>
+</body>
+</html>
